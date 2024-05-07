@@ -47,7 +47,7 @@ const HomePage = () => {
         // Render your actual content here
 
         <div>
-          <div className="flex w-full gap-2 border px-4 py-4">
+          <div className="flex w-full gap-2  px-4 py-4">
             <div className="flex flex-col items-center">
               <Button size="icon" asChild>
                 <Link href="/projets">
@@ -84,7 +84,7 @@ const HomePage = () => {
               </Link>
             </Button> */}
           </div>
-          <div className="relative mx-auto mt-40 max-w-md border border-red-200">
+          <div className="relative mx-auto mt-40 max-w-md ">
             <AvatarVito />
             <ChatBubble className=" absolute -top-20 right-1/2 translate-x-1/2 text-sm sm:text-base">
               <p className="font-bold">Bonjour !</p>
@@ -96,7 +96,7 @@ const HomePage = () => {
             </ChatBubble>
           </div>
 
-          <div className="flex w-full gap-2 border px-4 py-4">
+          <div className="flex w-full gap-2 px-4 py-4">
             <Button size="icon" asChild>
               <Link href="/about">
                 <Instagram />
