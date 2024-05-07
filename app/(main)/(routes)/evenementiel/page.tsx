@@ -1,7 +1,11 @@
-export default function SpectaclesPage() {
+"use client";
+
+import PageWrapper from "@/components/framer-motion/page-wrapper";
+
+export default function EvenementielPage() {
   return (
-    <div>
-      <h1>SPECTACLES</h1>
-    </div>
+    <PageWrapper className="mx-auto w-full rounded-xl bg-white p-4">
+      <h1>EVENEMENTIEL PAGE</h1>
+    </PageWrapper>
   );
 }

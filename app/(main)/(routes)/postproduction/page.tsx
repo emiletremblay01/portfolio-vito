@@ -1,7 +1,11 @@
+"use client";
+
+import PageWrapper from "@/components/framer-motion/page-wrapper";
+
 export default function PostProductionPage() {
   return (
-    <div>
-      <h1>POST PRODUCTION</h1>
-    </div>
+    <PageWrapper className="mx-auto w-full rounded-xl bg-white p-4">
+      <h1>POST PRODUCTION PAGE</h1>
+    </PageWrapper>
   );
 }

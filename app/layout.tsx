@@ -28,7 +28,7 @@ export default function RootLayout({
         )}
       >
         <BackgroundGif />
-        <div className="sm:container">{children}</div>
+        <div className="px-4 sm:container">{children}</div>
       </body>
     </html>
   );
