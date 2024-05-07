@@ -10,7 +10,7 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "Vito Pranio Portfolio",
+  title: "Vito Pranio - Artiste sonore",
   description: "Portfolio de Vito Pranio, artiste sonore",
 };
 
