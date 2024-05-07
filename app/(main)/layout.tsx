@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { ProtoolsIcon, MicIcon, MusicIcon } from "@/public/svgs/svgs";
 export default function MainLayout({
   children,
 }: {
@@ -40,27 +41,27 @@ export default function MainLayout({
       <div className="flex w-full gap-2  px-4 py-4">
         <div className="flex flex-col items-center">
           <Button size="icon" asChild>
-            <Link href="/projets">
-              <Folder />
+            <Link href="/postproduction">
+              <ProtoolsIcon className=" size-8" />
             </Link>
           </Button>
-          <p className=" font-semibold">Projets</p>
+          <p className="font-semibold">Post-Prod</p>
         </div>
         <div className="flex flex-col items-center">
           <Button size="icon" asChild>
-            <Link href="/about">
-              <CircleUserRound />
+            <Link href="/evenementiel">
+              <MicIcon className="size-8" />
             </Link>
           </Button>
-          <p className=" font-semibold">À propos</p>
+          <p className="font-semibold">Spectacles</p>
         </div>
         <div className="flex flex-col items-center">
           <Button size="icon" asChild>
-            <Link href="/contact">
-              <Mail />
+            <Link href="/composition">
+              <MusicIcon className="size-8" />
             </Link>
           </Button>
-          <p className=" font-semibold">Contact</p>
+          <p className=" font-semibold">Composition</p>
         </div>
       </div>
       {children}
