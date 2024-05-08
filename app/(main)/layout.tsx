@@ -6,6 +6,7 @@ import {
   CircleUserRound,
   Facebook,
   Folder,
+  Home,
   Instagram,
   Mail,
 } from "lucide-react";
@@ -36,16 +37,16 @@ export default function MainLayout({
     }
   }, []);
   return (
-    <div className="min-h-screen">
+    <div className="flex min-h-full w-full flex-col justify-center bg-red-400 ">
       <div className="absolute left-0 top-0 -z-40 h-full w-full bg-white/15 backdrop-blur-sm"></div>
-      <div className="flex w-full gap-2  px-4 py-4">
+      <div className="flex w-full flex-none justify-center gap-10 px-4 py-4">
         <div className="flex flex-col items-center">
           <Button size="icon" asChild>
             <Link href="/postproduction">
               <ProtoolsIcon className=" size-8" />
             </Link>
           </Button>
-          <p className="font-semibold">Post-Prod</p>
+          <p className="hidden font-semibold">Post-Prod</p>
         </div>
         <div className="flex flex-col items-center">
           <Button size="icon" asChild>
@@ -53,7 +54,7 @@ export default function MainLayout({
               <MicIcon className="size-8" />
             </Link>
           </Button>
-          <p className="font-semibold">Spectacles</p>
+          <p className="hidden font-semibold">Spectacles</p>
         </div>
         <div className="flex flex-col items-center">
           <Button size="icon" asChild>
@@ -61,18 +62,25 @@ export default function MainLayout({
               <MusicIcon className="size-8" />
             </Link>
           </Button>
-          <p className=" font-semibold">Composition</p>
+          <p className="hidden font-semibold">Composition</p>
         </div>
       </div>
-      {children}
-      <div className="flex w-full gap-2 px-4 py-4">
+      <div className="flex-1">{children}</div>
+      <div className="flex w-full flex-none gap-2 px-4 py-4">
         <Button size="icon" asChild>
-          <Link href="/about">
+          <Link href="/">
+            <Home />
+          </Link>
+        </Button>
+        <div className="flex-1"></div>
+        <Button size="icon" asChild>
+          <Link href="/" target="_blank">
             <Instagram />
           </Link>
         </Button>
+
         <Button size="icon" asChild>
-          <Link href="/about">
+          <Link href="/" target="_blank">
             <Facebook />
           </Link>
         </Button>

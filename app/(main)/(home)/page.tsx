@@ -4,7 +4,8 @@ import ChatBubble from "@/components/chatBubble";
 const HomePage = () => {
   return (
     <div>
-      <div className="relative mx-auto mt-40 max-w-md ">
+      <div className="h-40 w-full"></div>
+      <div className="relative mx-auto  max-w-md ">
         <AvatarVito />
         <ChatBubble className=" absolute -top-20 right-1/2 translate-x-1/2 text-sm sm:text-base">
           <p className="font-bold">Bonjour !</p>

@@ -15,7 +15,7 @@ export default function PageWrapper({ children, className }: PageWrapperProps) {
         delay: 0.1,
         ease: [0, 0.71, 0.2, 1.01],
       }}
-      className={cn("relative", className)}
+      className={cn("h-full", className)}
     >
       {children}
     </motion.div>

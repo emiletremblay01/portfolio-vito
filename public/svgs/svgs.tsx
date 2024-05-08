@@ -110,4 +110,5 @@ const MusicIcon = ({
     </svg>
   );
 };
+
 export { ProtoolsIcon, MicIcon, MusicIcon };
