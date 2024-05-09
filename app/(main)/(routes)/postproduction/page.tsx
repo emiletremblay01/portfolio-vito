@@ -5,6 +5,7 @@ import Image from "next/image";
 import vitoPostProduction from "@/public/avatars/vito_postprod.png";
 import ChatBubble from "@/components/chatBubble";
 import { NavExperiences } from "@/components/navExperiences";
+import ExperienceCard from "@/components/experienceCard";
 export default function PostProductionPage() {
   return (
     <PageWrapper className="w-full overflow-hidden rounded-xl border border-black/40 bg-white/80 shadow-xl backdrop-blur-xl ">
@@ -30,6 +31,14 @@ export default function PostProductionPage() {
           </ChatBubble>
         </div>
         <NavExperiences />
+        <div className="flex flex-wrap">
+          <ExperienceCard
+            id="1"
+            title="Post production"
+            date="2021"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita veniam minima omnis. Soluta consequatur sapiente est libero adipisci ullam, ratione quo aliquam dolorem, repellat, error facilis. Culpa animi esse consectetur."
+          />
+        </div>
       </div>
     </PageWrapper>
   );
