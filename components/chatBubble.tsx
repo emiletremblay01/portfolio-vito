@@ -12,7 +12,7 @@ export default function ChatBubble({
   return (
     <div
       className={cn(
-        "relative z-10 w-64 rounded-lg bg-[#4E6B33] p-4 text-white shadow-lg shadow-white sm:w-72",
+        "relative z-10 w-64 rounded-lg bg-[#4E6B33] p-4 text-white sm:w-72",
         className,
       )}
     >
@@ -40,7 +40,7 @@ export default function ChatBubble({
           viewBox="0 0 230 175"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="scale-25 absolute -left-4 bottom-0 -z-20 transform"
+          className="scale-25 absolute -left-4 -top-4 -z-20 transform"
         >
           <path
             d="M4.10281 93.1229C-1.1059 91.1837 -1.10588 83.8163 4.10282 81.8771L221.657 0.879663C225.577 -0.579915 229.75 2.31937 229.75 6.5026L229.75 168.497C229.75 172.681 225.577 175.58 221.657 174.12L4.10281 93.1229Z"
