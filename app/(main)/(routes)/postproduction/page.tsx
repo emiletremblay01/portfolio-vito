@@ -32,12 +32,7 @@ export default function PostProductionPage() {
         </div>
         <NavExperiences />
         <div className="flex flex-wrap">
-          <ExperienceCard
-            id="1"
-            title="Post production"
-            date="2021"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita veniam minima omnis. Soluta consequatur sapiente est libero adipisci ullam, ratione quo aliquam dolorem, repellat, error facilis. Culpa animi esse consectetur."
-          />
+          <ExperienceCard id="1" title="Stage chez Joe Caron" />
         </div>
       </div>
     </PageWrapper>
