@@ -21,7 +21,7 @@ export default function MainLayout({
 }) {
   return (
     <Suspense>
-      <div className="flex min-h-full w-full flex-col justify-center ">
+      <div className="flex h-full max-h-fit w-full flex-col justify-center ">
         <div className="absolute left-0 top-0 -z-40 h-full w-full bg-white/15 backdrop-blur-sm"></div>
         <div className="flex w-full flex-none justify-center gap-10 px-4 py-4">
           <div className="flex flex-col items-center">

@@ -8,7 +8,7 @@ export function BackgroundGif() {
         src={img}
         alt="background of a studio"
         unoptimized
-        className="absolute left-0 top-0 -z-50 h-full object-cover"
+        className="pointer-events-none absolute left-0 top-0 -z-50 h-full select-none object-cover"
         priority
       />
     </>

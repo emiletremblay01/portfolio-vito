@@ -28,7 +28,9 @@ export default function RootLayout({
         )}
       >
         <BackgroundGif />
-        <div className="flex min-h-full px-4 sm:container">{children}</div>
+        <div className="flex h-full overflow-clip px-4 sm:container">
+          {children}
+        </div>
       </body>
     </html>
   );

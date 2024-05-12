@@ -8,13 +8,13 @@ import { NavExperiences } from "@/components/navExperiences";
 import ExperienceCard from "@/components/experienceCard";
 export default function PostProductionPage() {
   return (
-    <PageWrapper className="w-full overflow-hidden rounded-xl border border-black/40 bg-white/80 shadow-xl backdrop-blur-xl ">
+    <PageWrapper className="w-full flex-1 overflow-hidden rounded-xl border border-black/40 bg-white/80 shadow-xl backdrop-blur-xl ">
       <h1 className="bg-black/80 px-4 py-2 font-bold text-white">
         POST PRODUCTION{" "}
         <span className="hidden sm:inline-block">ET CRÉATION SONORE</span>
       </h1>
-      <div className="flex flex-col gap-6 p-4">
-        <div className="flex w-full items-start gap-6">
+      <div className="flex h-fit grow-0 flex-col gap-6 p-4">
+        <div className="flex h-full w-full items-start gap-6">
           <Image
             src={vitoPostProduction}
             alt="Avatar of me"
@@ -31,8 +31,11 @@ export default function PostProductionPage() {
           </ChatBubble>
         </div>
         <NavExperiences />
-        <div className="flex flex-wrap">
+        <div className="grid h-24  grid-cols-2 gap-1 overflow-scroll">
           <ExperienceCard id="1" title="Stage chez Joe Caron" />
+          <ExperienceCard id="2" title="Lorme ipsum" />
+          <ExperienceCard id="2" title="Lorme ipsum" />
+          <ExperienceCard id="2" title="Lorme ipsum" />
         </div>
       </div>
     </PageWrapper>
