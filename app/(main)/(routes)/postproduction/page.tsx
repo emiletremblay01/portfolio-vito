@@ -7,6 +7,28 @@ import ChatBubble from "@/components/chatBubble";
 import { NavExperiences } from "@/components/navExperiences";
 import ExperienceCard from "@/components/experienceCard";
 export default function PostProductionPage() {
+  const experiences = [
+    {
+      id: "1",
+      title: "Stage chez Joe Caron",
+    },
+    {
+      id: "2",
+      title: "Lorme ipsum",
+    },
+    {
+      id: "3",
+      title: "Lorme ipsum",
+    },
+    {
+      id: "4",
+      title: "Lorme ipsum",
+    },
+    {
+      id: "5",
+      title: "Lorme ipsum",
+    },
+  ];
   return (
     <PageWrapper className="w-full flex-1 overflow-hidden rounded-xl border border-black/40 bg-white/80 shadow-xl backdrop-blur-xl ">
       <h1 className="bg-black/80 px-4 py-2 font-bold text-white">
@@ -34,13 +56,15 @@ export default function PostProductionPage() {
         {/* div experiences */}
         <NavExperiences />
         {/* div grid experiences */}
-        <div className="relative h-full overflow-scroll rounded ">
-          <div className="absolute left-0 top-0 grid grid-cols-2 gap-1">
-            <ExperienceCard id="1" title="Stage chez Joe Caron" />
-            <ExperienceCard id="2" title="Lorme ipsum" />
-            <ExperienceCard id="2" title="Lorme ipsum" />
-            <ExperienceCard id="2" title="Lorme ipsum" />
-            <ExperienceCard id="2" title="Lorme ipsum" />
+        <div className="relative h-full overflow-y-scroll rounded ">
+          <div className="absolute left-0 top-0 grid grid-cols-2 flex-wrap gap-1 min-[470px]:grid-cols-3 sm:flex sm:gap-2">
+            {experiences.map((experience) => (
+              <ExperienceCard
+                key={experience.id}
+                className=" sm:size-44"
+                {...experience}
+              />
+            ))}
           </div>
         </div>
         <div className="h-6 w-full"></div>

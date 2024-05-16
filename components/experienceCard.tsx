@@ -36,7 +36,7 @@ export default function ExperienceCard({
         className="pointer-events-none absolute left-0 top-0 -z-40 w-full transform select-none transition-transform group-hover:scale-105"
       />
       <div className="invisible h-1/3"></div>
-      <h2 className="font-bold text-white">{title}</h2>
+      <h2 className="text-center font-bold text-white">{title}</h2>
     </Link>
   );
 }
