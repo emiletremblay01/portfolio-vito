@@ -1,18 +1,8 @@
 "use client";
-import { AvatarVito } from "@/components/avatarVito";
-import ChatBubble from "@/components/chatBubble";
 import { Button } from "@/components/ui/button";
-import {
-  CircleUserRound,
-  Facebook,
-  Folder,
-  Home,
-  Instagram,
-  Mail,
-} from "lucide-react";
+import { MicIcon, MusicIcon, ProtoolsIcon } from "@/public/svgs/svgs";
+import { Facebook, Home, Instagram } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { ProtoolsIcon, MicIcon, MusicIcon } from "@/public/svgs/svgs";
 import { Suspense } from "react";
 export default function MainLayout({
   children,
