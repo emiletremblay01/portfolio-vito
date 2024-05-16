@@ -13,8 +13,9 @@ export default function PostProductionPage() {
         POST PRODUCTION{" "}
         <span className="hidden sm:inline-block">ET CRÉATION SONORE</span>
       </h1>
-      <div className="flex h-fit grow-0 flex-col gap-6 p-4">
-        <div className="flex h-full w-full items-start gap-6">
+      {/* div vito */}
+      <div className="flex h-full flex-col gap-6 p-4">
+        <div className="flex w-full items-start gap-6">
           <Image
             src={vitoPostProduction}
             alt="Avatar of me"
@@ -30,13 +31,19 @@ export default function PostProductionPage() {
             animi esse consectetur.
           </ChatBubble>
         </div>
+        {/* div experiences */}
         <NavExperiences />
-        <div className="grid h-24  grid-cols-2 gap-1 overflow-scroll">
-          <ExperienceCard id="1" title="Stage chez Joe Caron" />
-          <ExperienceCard id="2" title="Lorme ipsum" />
-          <ExperienceCard id="2" title="Lorme ipsum" />
-          <ExperienceCard id="2" title="Lorme ipsum" />
+        {/* div grid experiences */}
+        <div className="relative h-full overflow-scroll rounded ">
+          <div className="absolute left-0 top-0 grid grid-cols-2 gap-1">
+            <ExperienceCard id="1" title="Stage chez Joe Caron" />
+            <ExperienceCard id="2" title="Lorme ipsum" />
+            <ExperienceCard id="2" title="Lorme ipsum" />
+            <ExperienceCard id="2" title="Lorme ipsum" />
+            <ExperienceCard id="2" title="Lorme ipsum" />
+          </div>
         </div>
+        <div className="h-6 w-full"></div>
       </div>
     </PageWrapper>
   );
