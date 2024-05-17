@@ -21,25 +21,21 @@ export function NavExperiences({
   }, [selectedExperienceType]);
   const routes = [
     {
-      label: "Toutes les expériences",
       labelShort: "Toutes",
       type: "all",
       active: selectedExperienceType === "all",
     },
     {
-      label: "Expérience professionnelle",
       labelShort: "Professionnelles",
       type: "professional",
       active: selectedExperienceType === "professional",
     },
     {
-      label: "Expérience personnelle",
       labelShort: "Personnelles",
       type: "personal",
       active: selectedExperienceType === "personal",
     },
     {
-      label: "Expérience scolaire",
       labelShort: "Scolaires",
       type: "school",
       active: selectedExperienceType === "school",
@@ -52,7 +48,7 @@ export function NavExperiences({
 
         <div className="flex w-full flex-wrap gap-x-2">
           {routes.map((route) => (
-            <div key={route.label} className="group flex">
+            <div key={route.labelShort} className="group flex">
               <Link
                 href={`?experience=${route.type}`}
                 className={cn(
