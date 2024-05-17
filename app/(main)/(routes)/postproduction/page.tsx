@@ -37,14 +37,14 @@ export default function PostProductionPage() {
       </h1>
       {/* div vito */}
       <div className="flex h-full flex-col gap-6 p-4">
-        <div className="flex w-full items-start gap-6">
+        <div className="flex w-full items-start justify-center gap-6">
           <Image
             src={vitoPostProduction}
             alt="Avatar of me"
-            className=" w-20"
+            className="w-20 sm:w-40"
           />
           <ChatBubble
-            className=" min-h-24 w-full max-w-sm p-2 text-xs"
+            className=" min-h-24 w-full max-w-sm p-2 text-xs sm:h-fit sm:translate-y-6 sm:px-4 sm:text-sm"
             direction="left"
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita

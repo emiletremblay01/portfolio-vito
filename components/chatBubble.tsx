@@ -12,7 +12,7 @@ export default function ChatBubble({
   return (
     <div
       className={cn(
-        "relative z-10 w-64 rounded-lg bg-[#4E6B33] p-4 text-white sm:w-72",
+        "relative z-10 w-64 rounded-lg bg-[#4E6B33] p-4 text-white ",
         className,
       )}
     >
