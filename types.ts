@@ -1,7 +1,13 @@
 export type Experience = {
-  title: string;
+  thumbnailTitle: string;
+  thumbnailImage: string;
   experienceCategory: "postproduction" | "evenementiel" | "composition";
   experienceType: "professionelle" | "personnelle" | "scolaire";
-
-  image: string;
+  title: string;
+  description: string;
+  competences?: string[];
+  liensYoutube?: string[];
+  images: string[];
+  createdAt: string;
+  updatedAt: string;
 };
