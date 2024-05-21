@@ -1,6 +1,6 @@
 Todos by day
 
-- [ ] Add smooth animation to the experiences card reveal
+- [x] Add smooth animation to the experiences card reveal
 
 - [ ] Replicate postprod page layout to other pages
 

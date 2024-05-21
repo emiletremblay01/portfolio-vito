@@ -28,7 +28,7 @@ const ExperiencesContainer = ({
           variants={variants}
           initial="hidden"
           animate="visible"
-          className="absolute left-0 top-0 grid grid-cols-2 flex-wrap gap-1 min-[470px]:grid-cols-3 sm:flex sm:gap-2"
+          className="absolute left-0 top-0 grid w-full grid-cols-2 flex-wrap gap-1 min-[470px]:grid-cols-3 sm:flex sm:gap-2"
         >
           {experiences.map((experience) => (
             <ExperienceCard
