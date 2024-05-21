@@ -27,25 +27,24 @@ export function NavExperiences({
     },
     {
       labelShort: "Professionnelles",
-      type: "professional",
-      active: selectedExperienceType === "professional",
+      type: "professionelle",
+      active: selectedExperienceType === "professionelle",
     },
     {
       labelShort: "Personnelles",
-      type: "personal",
-      active: selectedExperienceType === "personal",
+      type: "personnelle",
+      active: selectedExperienceType === "personnelle",
     },
     {
       labelShort: "Scolaires",
-      type: "school",
-      active: selectedExperienceType === "school",
+      type: "scolaire",
+      active: selectedExperienceType === "scolaire",
     },
   ];
   return (
     <>
       <nav className="">
         <div className="mb-1 text-lg font-bold text-black/80">Expériences</div>
-
         <div className="flex w-full flex-wrap gap-x-2">
           {routes.map((route) => (
             <div key={route.labelShort} className="group flex">

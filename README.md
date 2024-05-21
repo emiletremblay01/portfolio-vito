@@ -19,3 +19,5 @@ Todos by day
 - [ ] Create a form page to edit experiences
 
 - [ ] Connect the forms to the database
+
+This project uses Next.js, Tailwind CSS, Shadcn UI, and is deployed on Vercel.

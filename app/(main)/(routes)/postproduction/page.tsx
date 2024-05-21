@@ -1,34 +1,17 @@
 "use client";
-
-import PageWrapper from "@/components/framer-motion/page-wrapper";
-import Image from "next/image";
-import vitoPostProduction from "@/public/avatars/vito_postprod.png";
 import ChatBubble from "@/components/chatBubble";
+import ExperiencesContainer from "@/components/experiencesContainer";
+import PageWrapper from "@/components/framer-motion/page-wrapper";
 import { NavExperiences } from "@/components/navExperiences";
-import ExperienceCard from "@/components/experienceCard";
+import vitoPostProduction from "@/public/avatars/vito_postprod.png";
+import { experiencesDummyData } from "@/types";
+import Image from "next/image";
+import { useSearchParams } from "next/navigation";
+
 export default function PostProductionPage() {
-  const experiences = [
-    {
-      id: "1",
-      title: "Stage chez Joe Caron",
-    },
-    {
-      id: "2",
-      title: "Lorme ipsum",
-    },
-    {
-      id: "3",
-      title: "Lorme ipsum",
-    },
-    {
-      id: "4",
-      title: "Lorme ipsum",
-    },
-    {
-      id: "5",
-      title: "Lorme ipsum",
-    },
-  ];
+  const searchParams = useSearchParams();
+  const selectedExperienceType = searchParams.get("experience");
+
   return (
     <PageWrapper className="w-full flex-1 overflow-hidden rounded-xl border border-black/40 bg-white/80 shadow-xl backdrop-blur-xl ">
       <h1 className="bg-black/80 px-4 py-2 font-bold text-white">
@@ -57,15 +40,17 @@ export default function PostProductionPage() {
         <NavExperiences />
         {/* div grid experiences */}
         <div className="relative h-full overflow-y-scroll rounded ">
-          <div className="absolute left-0 top-0 grid grid-cols-2 flex-wrap gap-1 min-[470px]:grid-cols-3 sm:flex sm:gap-2">
-            {experiences.map((experience) => (
-              <ExperienceCard
-                key={experience.id}
-                className=" sm:size-44"
-                {...experience}
-              />
-            ))}
-          </div>
+          <ExperiencesContainer
+            key={selectedExperienceType}
+            experiences={
+              selectedExperienceType === "all"
+                ? experiencesDummyData
+                : experiencesDummyData.filter(
+                    (experience) =>
+                      experience.experienceType === selectedExperienceType,
+                  )
+            }
+          />
         </div>
         <div className="h-6 w-full"></div>
       </div>
