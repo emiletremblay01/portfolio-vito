@@ -10,7 +10,7 @@ import { experiencesDummyData } from "@/types";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 
-export default function PostProductionPage() {
+export default function EvenementielPage() {
   const searchParams = useSearchParams();
   const selectedExperienceType = searchParams.get("experience");
 
