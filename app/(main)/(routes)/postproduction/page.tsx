@@ -14,9 +14,8 @@ export default function PostProductionPage() {
 
   return (
     <PageWrapper className="w-full flex-1 overflow-hidden rounded-xl border border-black/40 bg-white/80 shadow-xl backdrop-blur-xl ">
-      <h1 className="bg-black/80 px-4 py-2 font-bold text-white">
-        POST PRODUCTION{" "}
-        <span className="hidden sm:inline-block">ET CRÉATION SONORE</span>
+      <h1 className="truncate bg-black/80 px-4 py-2 font-bold text-white">
+        POST PRODUCTION ET CRÉATION SONORE
       </h1>
       {/* div vito */}
       <div className="flex h-full flex-col gap-6 p-4">

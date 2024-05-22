@@ -10,7 +10,7 @@ const variants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15, // 0.2 seconds delay between each child's animation
+      staggerChildren: 0.13,
     },
   },
 };
