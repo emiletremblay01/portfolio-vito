@@ -4,7 +4,7 @@ Todos by day
 
 - [x] Replicate postprod page layout to other pages
 
-- [ ] Change buttons position after lg breakpoint
+- [x] Change buttons position after lg breakpoint
 
 - [ ] Create database for the experiences and fetch dummy data to display
 
