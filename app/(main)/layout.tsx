@@ -1,9 +1,11 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { MicIcon, MusicIcon, ProtoolsIcon } from "@/public/svgs/svgs";
+import { QueryClient } from "@tanstack/react-query";
 import { Facebook, Home, Instagram } from "lucide-react";
 import Link from "next/link";
 import { Suspense } from "react";
+const queryClient = new QueryClient();
 export default function MainLayout({
   children,
 }: {

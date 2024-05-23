@@ -3,7 +3,7 @@ import { Inter as FontSans } from "next/font/google";
 import "@/styles/globals.css";
 import { cn } from "@/lib/utils";
 import { BackgroundGif } from "@/components/backgroundGif";
-
+import Provider from "@/lib/Providers";
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description: "Portfolio de Vito Pranio, artiste sonore",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -27,8 +27,10 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
-        <BackgroundGif />
-        <div className="flex h-full px-4 sm:container">{children}</div>
+        <Provider>
+          <BackgroundGif />
+          <div className="flex h-full px-4 sm:container">{children}</div>
+        </Provider>
       </body>
     </html>
   );

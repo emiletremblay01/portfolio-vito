@@ -7,10 +7,26 @@ import vitoPostProduction from "@/public/avatars/vito_postprod.png";
 import { experiencesDummyData } from "@/types";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
-
+import { useQuery, useMutation } from "@tanstack/react-query";
+import { getExperiences } from "@/actions/actions";
 export default function PostProductionPage() {
   const searchParams = useSearchParams();
   const selectedExperienceType = searchParams.get("experience");
+
+  const experiencesQuery = useQuery({
+    queryKey: ["experiences"],
+    queryFn: getExperiences,
+  });
+
+  if (experiencesQuery.isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (experiencesQuery.isError) {
+    console.error(experiencesQuery.error);
+    return <div>Error...</div>;
+  }
+  console.log(experiencesQuery.data);
 
   return (
     <PageWrapper className="w-full flex-1 overflow-hidden rounded-xl border border-black/40 bg-white/80 shadow-xl backdrop-blur-xl ">
