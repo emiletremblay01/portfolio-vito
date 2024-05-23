@@ -1,10 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 import ExperienceCard from "@/components/experienceCard";
-import { Experience } from "@/types";
+import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
+import { useGetExperiences } from "@/actions/client/useGetExperiences";
+import { useSearchParams } from "next/navigation";
 const variants = {
   hidden: { opacity: 1 },
   visible: {
@@ -15,14 +16,32 @@ const variants = {
   },
 };
 
-const ExperiencesContainer = ({
-  experiences,
-}: {
-  experiences: Experience[] | null;
-}) => {
+const ExperiencesContainer = () => {
+  const pathname = usePathname();
+
+  const searchParams = useSearchParams();
+  const selectedExperienceType = searchParams.get("experience");
+
+  const { data: experiences, isLoading, isError } = useGetExperiences();
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+  if (isError) {
+    console.error("Error while fetching experiences");
+    return <div>Error...</div>;
+  }
+
+  if (!experiences) {
+    return <div>No experiences found</div>;
+  }
+
+  const filteredExperiences = experiences.filter(
+    (experience) => experience.experienceCategory === pathname.split("/")[1],
+  );
   return (
     <>
-      {experiences && (
+      {filteredExperiences && (
         <motion.ul
           id="experiences-container"
           variants={variants}
@@ -30,13 +49,26 @@ const ExperiencesContainer = ({
           animate="visible"
           className="absolute left-0 top-0 grid w-full grid-cols-2 flex-wrap gap-1 min-[470px]:grid-cols-3 sm:flex sm:gap-2"
         >
-          {experiences.map((experience) => (
-            <ExperienceCard
-              key={experience.thumbnailTitle}
-              className="sm:size-44"
-              title={experience.thumbnailTitle}
-            />
-          ))}
+          {selectedExperienceType === "all"
+            ? filteredExperiences.map((experience) => (
+                <ExperienceCard
+                  key={experience.thumbnailTitle}
+                  className="sm:size-44"
+                  title={experience.thumbnailTitle}
+                />
+              ))
+            : filteredExperiences
+                .filter(
+                  (experience) =>
+                    experience.experienceType === selectedExperienceType,
+                )
+                .map((experience) => (
+                  <ExperienceCard
+                    key={experience.thumbnailTitle}
+                    className="sm:size-44"
+                    title={experience.thumbnailTitle}
+                  />
+                ))}
         </motion.ul>
       )}
     </>

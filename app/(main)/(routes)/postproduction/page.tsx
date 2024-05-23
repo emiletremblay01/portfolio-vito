@@ -4,16 +4,12 @@ import ExperiencesContainer from "@/components/experiencesContainer";
 import PageWrapper from "@/components/framer-motion/page-wrapper";
 import { NavExperiences } from "@/components/navExperiences";
 import vitoPostProduction from "@/public/avatars/vito_postprod.png";
-import { experiencesDummyData } from "@/types";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
-import { useGetExperiences } from "@/actions/client/get-experiences";
+
 export default function PostProductionPage() {
   const searchParams = useSearchParams();
   const selectedExperienceType = searchParams.get("experience");
-
-  const { data, isLoading, isError } = useGetExperiences();
-
   return (
     <PageWrapper className="w-full flex-1 overflow-hidden rounded-xl border border-black/40 bg-white/80 shadow-xl backdrop-blur-xl ">
       <h1 className="truncate bg-black/80 px-4 py-2 font-bold text-white">
@@ -41,17 +37,7 @@ export default function PostProductionPage() {
         <NavExperiences />
         {/* div grid experiences */}
         <div className="relative h-full overflow-y-scroll rounded ">
-          <ExperiencesContainer
-            key={selectedExperienceType}
-            experiences={
-              selectedExperienceType === "all"
-                ? experiencesDummyData
-                : experiencesDummyData.filter(
-                    (experience) =>
-                      experience.experienceType === selectedExperienceType,
-                  )
-            }
-          />
+          {<ExperiencesContainer key={selectedExperienceType} />}
         </div>
         <div className="h-6 w-full"></div>
       </div>

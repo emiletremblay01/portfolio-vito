@@ -5,7 +5,6 @@ import ChatBubble from "@/components/chatBubble";
 import ExperiencesContainer from "@/components/experiencesContainer";
 import PageWrapper from "@/components/framer-motion/page-wrapper";
 import { NavExperiences } from "@/components/navExperiences";
-import { experiencesDummyData } from "@/types";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 
@@ -41,17 +40,7 @@ export default function CompositionPage() {
         <NavExperiences />
         {/* div grid experiences */}
         <div className="relative h-full overflow-y-scroll rounded ">
-          <ExperiencesContainer
-            key={selectedExperienceType}
-            experiences={
-              selectedExperienceType === "all"
-                ? experiencesDummyData
-                : experiencesDummyData.filter(
-                    (experience) =>
-                      experience.experienceType === selectedExperienceType,
-                  )
-            }
-          />
+          <ExperiencesContainer key={selectedExperienceType} />
         </div>
         <div className="h-6 w-full"></div>
       </div>

@@ -1,4 +1,5 @@
 "use server";
+import { Experience } from "@/types";
 import axios from "axios";
 
 export async function fetchExperiences() {
@@ -18,10 +19,10 @@ export async function fetchExperiences() {
         filter: {},
       }),
     });
-
-    return res.data.documents;
+    const experiences: Experience[] = res.data.documents;
+    return experiences;
   } catch (error) {
     console.error(error);
-    return error;
+    return null;
   }
 }
