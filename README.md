@@ -2,7 +2,7 @@ Todos by day
 
 - [x] Add smooth animation to the experiences card reveal
 
-- [ ] Replicate postprod page layout to other pages
+- [x] Replicate postprod page layout to other pages
 
 - [ ] Change buttons position after lg breakpoint
 
