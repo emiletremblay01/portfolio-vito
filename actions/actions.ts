@@ -1,7 +1,7 @@
 "use server";
 import axios from "axios";
 
-export async function getExperiences() {
+export async function fetchExperiences() {
   try {
     const res = await axios({
       method: "post",
