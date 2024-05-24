@@ -6,7 +6,7 @@ Todos by day
 
 - [x] Change buttons position after lg breakpoint
 
-- [ ] Create database for the experiences and fetch dummy data to display
+- [x] Create database for the experiences and fetch dummy data to display
 
 - [ ] Create dymamic page ui for the experiences using [experienceId]
 

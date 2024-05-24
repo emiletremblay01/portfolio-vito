@@ -54,7 +54,7 @@ const ExperiencesContainer = () => {
                 <ExperienceCard
                   key={experience.thumbnailTitle}
                   className="sm:size-44"
-                  title={experience.thumbnailTitle}
+                  experience={experience}
                 />
               ))
             : filteredExperiences
@@ -66,7 +66,7 @@ const ExperiencesContainer = () => {
                   <ExperienceCard
                     key={experience.thumbnailTitle}
                     className="sm:size-44"
-                    title={experience.thumbnailTitle}
+                    experience={experience}
                   />
                 ))}
         </motion.ul>

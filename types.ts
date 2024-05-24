@@ -1,4 +1,5 @@
 export type Experience = {
+  _id: string;
   thumbnailTitle: string;
   thumbnailImage: string;
   experienceCategory: "postproduction" | "evenementiel" | "composition";
