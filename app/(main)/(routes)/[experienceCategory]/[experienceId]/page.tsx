@@ -27,8 +27,8 @@ export default function ExperiencePage({
 
   const { title, description } = experience;
   return (
-    <div className="w-full flex-1 overflow-hidden rounded-xl border border-black/40 bg-white/80 shadow-xl backdrop-blur-xl ">
-      <h1 className="bg-black/80 px-4 py-2 font-bold text-white">{title}</h1>
+    <div className="w-full flex-1 ">
+      <h1>{title}</h1>
       {/* div vito */}
       <div className="flex h-full flex-col gap-6 p-4">
         <div className="flex w-full items-start justify-center gap-6">
