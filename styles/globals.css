@@ -4,6 +4,9 @@
 
 @layer base {
   :root {
+    /* custom variables: */
+    --main-green: 91.07, 35.44%, 30.98%;
+
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 

@@ -51,9 +51,9 @@ export function NavExperiences({
               <Link
                 href={`?experience=${route.type}`}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-[#4E6B33]",
+                  "hover:text-main_vert text-sm font-medium transition-colors",
                   route.active
-                    ? "text-[#4E6B33] underline decoration-inherit underline-offset-1 dark:text-white"
+                    ? "text-main_vert underline decoration-inherit underline-offset-1 dark:text-white"
                     : "text-black/80",
                 )}
               >
