@@ -53,7 +53,7 @@ const ExperiencesContainer = () => {
             ? filteredExperiences.map((experience) => (
                 <ExperienceCard
                   key={experience.thumbnailTitle}
-                  className="sm:size-44"
+                  className="sm:size-44 lg:size-60"
                   experience={experience}
                 />
               ))

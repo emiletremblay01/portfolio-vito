@@ -20,11 +20,11 @@ export default function ExperienceCard({
   const pathname = usePathname();
   const { _id, thumbnailTitle } = experience;
   return (
-    <motion.li key={_id} variants={variants}>
+    <motion.li className="relative" key={_id} variants={variants}>
       <Link
         href={`${pathname}/${_id}`}
         className={cn(
-          "group relative flex aspect-square flex-col items-center overflow-clip rounded-lg bg-black/20 p-4 shadow-md transition-colors hover:bg-black/60",
+          "group relative flex aspect-square flex-col items-center overflow-clip rounded-lg bg-black/20 p-4 shadow-md transition-colors hover:bg-black/60 sm:size-44 lg:size-60",
           className,
         )}
       >
@@ -37,6 +37,9 @@ export default function ExperienceCard({
         />
         <div className="invisible h-1/3"></div>
         <h2 className="text-center font-bold text-white">{thumbnailTitle}</h2>
+        <div className="absolute bottom-0 mb-4 hidden rounded border border-white p-2 text-xs text-white opacity-60 transition-opacity group-hover:opacity-100 sm:block">
+          {experience.experienceType.toUpperCase()}
+        </div>
       </Link>
     </motion.li>
   );
