@@ -77,7 +77,7 @@ export default function ExperiencePage({
               ))}
             </div>
           </div>
-          {competences && (
+          {competences && competences.length > 0 && (
             <div className="mt-6 w-full space-y-2">
               <div className=" w-full font-semibold underline">
                 Compétences utilisées
