@@ -115,7 +115,7 @@ export default function ExperiencePage({
                       >
                         <div className="h-full w-full overflow-hidden rounded ">
                           <Image
-                            src={image}
+                            src={image.url}
                             width={400}
                             height={400}
                             alt={`Image ${i}`}

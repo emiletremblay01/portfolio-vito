@@ -8,7 +8,7 @@ Todos by day
 
 - [x] Create database for the experiences and fetch dummy data to display
 
-- [ ] Create dymamic page ui for the experiences using [experienceId]
+- [x] Create dymamic page ui for the experiences using [experienceId]
 
 - [ ] Create new project. dashboard login for the admin to add/update experiences
 

@@ -8,7 +8,9 @@ export type Experience = {
   description: string;
   competences?: string[];
   liensYoutube?: string[];
-  images: string[];
+  images: {
+    url: string;
+  }[];
   createdAt: string;
   updatedAt: string;
 };
