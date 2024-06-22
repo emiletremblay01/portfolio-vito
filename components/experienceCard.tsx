@@ -18,7 +18,7 @@ export default function ExperienceCard({
   className,
 }: ExperienceCardProps) {
   const pathname = usePathname();
-  const { _id, thumbnailTitle } = experience;
+  const { _id, thumbnailTitle, thumbnailImage } = experience;
   return (
     <motion.li className="relative" key={_id} variants={variants}>
       <Link
@@ -29,7 +29,7 @@ export default function ExperienceCard({
         )}
       >
         <Image
-          src="https://picsum.photos/200"
+          src={thumbnailImage}
           width="200"
           height="200"
           alt="placeholder"
