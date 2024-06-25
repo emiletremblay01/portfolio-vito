@@ -11,8 +11,7 @@ const HomePage = () => {
           <p className="font-bold">Bonjour !</p>
           <p>
             Je suis <span className="font-bold">Vito Pranio</span>, un passionné
-            d'<span className="font-bold">art sonore</span> qui souhaite
-            partager son travail.
+            d'audio et de post production qui souhaite partager son travail.
           </p>
         </ChatBubble>
       </div>

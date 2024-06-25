@@ -1,12 +1,10 @@
 "use client";
-import Image from "next/image";
+import ChatBubble from "@/components/chatBubble";
 import vitoComposition from "@/public/avatars/vito_composition.png";
 import vitoEvenementiel from "@/public/avatars/vito_evenementiel.png";
 import vitoPostProduction from "@/public/avatars/vito_postprod.png";
-import ChatBubble from "@/components/chatBubble";
-import { Experience } from "@/types";
+import Image from "next/image";
 export default function VitoWithChatBubble({ params }: { params: string }) {
-  type experienceCategoryType = Experience["experienceCategory"];
   const experienceCategory = params;
 
   // code to be improved
@@ -25,10 +23,11 @@ export default function VitoWithChatBubble({ params }: { params: string }) {
             direction="left"
             arrowClasses=""
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
-            veniam minima omnis. Soluta consequatur sapiente est libero adipisci
-            ullam, ratione quo aliquam dolorem, repellat, error facilis. Culpa
-            animi esse consectetur.
+            Passionné de musique depuis l'enfance, j'ai commencé le saxophone à
+            10 ans. Après un parcours scolaire accompagné de musique, j'ai
+            obtenu mon baccalauréat avec option musique en 2017. Depuis, j'ai
+            continué à composer et à apprendre les DAW. Voici une liste de mes
+            diverses expériences dans ce domaine.
           </ChatBubble>
         </div>
       );
@@ -45,10 +44,10 @@ export default function VitoWithChatBubble({ params }: { params: string }) {
             direction="left"
             arrowClasses=" translate-y-4"
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
-            veniam minima omnis. Soluta consequatur sapiente est libero adipisci
-            ullam, ratione quo aliquam dolorem, repellat, error facilis. Culpa
-            animi esse consectetur.
+            J'ai découvert le domaine du son en tant que technicien dans le
+            spectacle. Après quelques concerts bénévoles, j'ai étudié à STAFF et
+            obtenu mon diplôme technique en 2020. Voici une liste de mes
+            diverses expériences dans ce domaine.
           </ChatBubble>
         </div>
       );
@@ -64,10 +63,10 @@ export default function VitoWithChatBubble({ params }: { params: string }) {
             className=" min-h-24 w-full max-w-sm p-2 text-xs sm:h-fit sm:translate-y-6 sm:px-4 sm:text-sm"
             direction="left"
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
-            veniam minima omnis. Soluta consequatur sapiente est libero adipisci
-            ullam, ratione quo aliquam dolorem, repellat, error facilis. Culpa
-            animi esse consectetur.
+            Lors de mes études à Musitechnic, j'ai découvert ma passion pour la
+            post-production. J'aspire à travailler dans ce domaine, notamment
+            comme bruiteur ou preneur de son. Voici une liste de mes diverses
+            expériences dans ce domaine.
           </ChatBubble>
         </div>
       );
