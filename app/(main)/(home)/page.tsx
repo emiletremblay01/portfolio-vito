@@ -7,7 +7,7 @@ const HomePage = () => {
       <div className="h-40 w-full"></div>
       <div className="relative mx-auto  max-w-md ">
         <AvatarVito />
-        <ChatBubble className=" absolute -top-20 right-1/2 translate-x-1/2 text-sm sm:text-base">
+        <ChatBubble className="absolute -top-20 right-1/2 min-w-72 translate-x-1/2 text-sm sm:text-base">
           <p className="font-bold">Bonjour !</p>
           <p>
             Je suis <span className="font-bold">Vito Pranio</span>, un passionné
