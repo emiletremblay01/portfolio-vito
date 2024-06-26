@@ -31,14 +31,6 @@ export function BtnLeftNav() {
         <p className="hidden font-semibold">Composition</p>
       </div>
       <div className="hidden flex-1 md:block"></div>
-      <div className="hidden flex-col items-center md:flex">
-        <Button size="icon" className="" asChild>
-          <Link href="/">
-            <Home />
-          </Link>
-        </Button>
-        <p className="hidden font-semibold">Composition</p>
-      </div>
     </div>
   );
 }

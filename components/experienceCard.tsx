@@ -36,7 +36,9 @@ export default function ExperienceCard({
           className="pointer-events-none absolute left-0 top-0 -z-40 w-full transform select-none transition-transform group-hover:scale-105"
         />
         <div className="invisible h-1/3"></div>
-        <h2 className="text-center font-bold text-white">{thumbnailTitle}</h2>
+        <h2 className="text-center font-bold text-white [text-shadow:1px_2px_6px_black]">
+          {thumbnailTitle}
+        </h2>
         <div className="absolute bottom-0 mb-4 hidden rounded border border-white p-2 text-xs text-white opacity-60 transition-opacity group-hover:opacity-100 sm:block">
           {experience.experienceType.toUpperCase()}
         </div>

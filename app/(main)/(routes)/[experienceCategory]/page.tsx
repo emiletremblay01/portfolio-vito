@@ -1,12 +1,8 @@
 "use client";
-import vitoComposition from "@/public/avatars/vito_composition.png";
 
-import ChatBubble from "@/components/chatBubble";
-import ExperiencesContainer from "./components/experiencesContainer";
-import PageWrapper from "@/components/framer-motion/page-wrapper";
-import { NavExperiences } from "./components/navExperiences";
-import Image from "next/image";
 import { useSearchParams } from "next/navigation";
+import ExperiencesContainer from "./components/experiencesContainer";
+import { NavExperiences } from "./components/navExperiences";
 import VitoWithChatBubble from "./components/vitoWithChatBubble";
 
 export default function ExperienceCategoryPage({
