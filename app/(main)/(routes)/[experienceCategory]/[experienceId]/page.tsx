@@ -102,7 +102,7 @@ export default function ExperiencePage({
                   plugins={[plugin.current]}
                   onMouseEnter={plugin.current.stop}
                   onMouseLeave={plugin.current.reset}
-                  className="mx-12 size-60 rounded lg:size-80 "
+                  className="mx-12 w-60 aspect-[9/16] rounded lg:w-80 "
                 >
                   <CarouselPrevious />
                   <CarouselContent className=" rounded">
