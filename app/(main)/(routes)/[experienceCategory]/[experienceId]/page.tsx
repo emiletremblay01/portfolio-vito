@@ -79,7 +79,7 @@ export default function ExperiencePage({
           </div>
           {competences && competences.length > 0 && (
             <div className="mt-6 w-full space-y-2">
-              <div className=" w-full font-semibold underline">
+              <div className="w-full font-semibold underline">
                 Compétences utilisées
               </div>
               <ul className=" flex w-full gap-1">
@@ -96,21 +96,21 @@ export default function ExperiencePage({
           )}
           {images.length > 0 && (
             <div className="mt-6 w-full space-y-2">
-              <div className=" w-full font-semibold underline">Photos</div>
+              <div className="w-full font-semibold underline">Photos</div>
               <div className="flex w-full justify-center">
                 <Carousel
                   plugins={[plugin.current]}
                   onMouseEnter={plugin.current.stop}
                   onMouseLeave={plugin.current.reset}
-                  className="mx-12 w-60 aspect-[9/16] rounded lg:w-80 "
+                  className="mx-12 w-60 aspect-[9/16] rounded lg:w-80"
                 >
                   <CarouselPrevious />
-                  <CarouselContent className=" rounded">
+                  <CarouselContent className="rounded">
                     {images.map((image, i) => (
                       <CarouselItem
                         key={i}
                         className={cn(
-                          "size-60 basis-full overflow-hidden rounded lg:size-80",
+                          "w-60 aspect-[9/16] basis-full overflow-hidden rounded lg:w-80",
                         )}
                       >
                         <div className="h-full w-full overflow-hidden rounded ">
