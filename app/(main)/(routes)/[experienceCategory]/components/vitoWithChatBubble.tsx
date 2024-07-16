@@ -19,7 +19,7 @@ export default function VitoWithChatBubble({ params }: { params: string }) {
             className="w-36 sm:w-56"
           />
           <ChatBubble
-            className="min-h-24 w-full max-w-sm p-2 text-xs sm:h-fit sm:translate-y-6 sm:px-4 sm:text-sm"
+            className=" min-h-24 w-full max-w-sm  p-2 text-xs sm:h-fit sm:max-h-full sm:translate-y-6 sm:px-4 sm:text-sm"
             direction="left"
             arrowClasses=""
           >
