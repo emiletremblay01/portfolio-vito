@@ -102,7 +102,7 @@ export default function ExperiencePage({
                   plugins={[plugin.current]}
                   onMouseEnter={plugin.current.stop}
                   onMouseLeave={plugin.current.reset}
-                  className="mx-12 w-60 aspect-[9/16] rounded lg:w-80"
+                  className="mx-12 aspect-[9/16] w-60 rounded lg:w-80"
                 >
                   <CarouselPrevious />
                   <CarouselContent className="rounded">
@@ -110,7 +110,7 @@ export default function ExperiencePage({
                       <CarouselItem
                         key={i}
                         className={cn(
-                          "w-60 aspect-[9/16] basis-full overflow-hidden rounded lg:w-80",
+                          "aspect-[9/16] w-60 basis-full overflow-hidden rounded lg:w-80",
                         )}
                       >
                         <div className="h-full w-full overflow-hidden rounded ">

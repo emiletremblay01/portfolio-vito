@@ -27,7 +27,7 @@ export default async function MainLayout({
         <div className="flex h-full max-h-fit w-full flex-col justify-center md:flex-row md:py-10">
           <div className="absolute left-0 top-0 -z-40 h-full w-full bg-white/15 backdrop-blur-sm"></div>
           <BtnLeftNav />
-          <div className="min-h-[1000px] flex-1 sm:min-h-full">{children}</div>
+          <div className="flex-1">{children}</div>
           <BtnRightNav />
         </div>
       </HydrationBoundary>

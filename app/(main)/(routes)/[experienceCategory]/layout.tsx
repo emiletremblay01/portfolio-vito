@@ -30,8 +30,8 @@ export default function ExperienceCategoryLayout({
     },
   ];
   return (
-    <PageWrapper className="w-full flex-1 overflow-hidden rounded-xl border border-black/40 bg-white/90 shadow-xl backdrop-blur-xl">
-      <h1 className="bg-_main-gray relative truncate px-4 py-2 font-bold text-white">
+    <PageWrapper className="min-h-[500px] w-full flex-1 overflow-hidden rounded-xl border border-black/40 bg-white/90 shadow-xl backdrop-blur-xl">
+      <h1 className="relative truncate bg-_main-gray px-4 py-2 font-bold text-white">
         {pageTitles.find((p) => p.category === experienceCategory)?.title}
         <div className="absolute right-0 top-0">
           <Button
