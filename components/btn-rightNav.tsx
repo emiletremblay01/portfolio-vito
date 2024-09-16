@@ -7,7 +7,7 @@ export function BtnRightNav() {
     <div className="flex w-full flex-none gap-2 px-4 py-4 md:w-fit md:flex-col md:gap-6">
       <div className="flex-1 md:hidden"></div>
       <Button size="icon" asChild>
-        <Link href="/cv_vito.pdf" target="_blank" download>
+        <Link href="/vitoresume.pdf" target="_blank" download>
           <CvIcon className="size-8" />
         </Link>
       </Button>
