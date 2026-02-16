@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Experience {
+  id                 String   @id @default(auto()) @map("_id") @db.ObjectId
+  thumbnailTitle     String
+  thumbnailImage     String
+  experienceCategory String
+  experienceType     String
+  title              String
+  description        String
+  competences        String[] @default([])
+  liensYoutube       String[] @default([])
+  images             Json[]
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  @@map("Experience")
+}
