@@ -1,26 +1,47 @@
 "use server";
+
+import { prisma } from "@/lib/prisma";
 import { Experience } from "@/types";
-import axios from "axios";
+
+type ExperienceImage = Experience["images"][number];
+
+function toExperience(record: {
+  id: string;
+  thumbnailTitle: string;
+  thumbnailImage: string;
+  experienceCategory: string;
+  experienceType: string;
+  title: string;
+  description: string;
+  competences: string[];
+  liensYoutube: string[];
+  images: unknown[];
+  createdAt: Date;
+  updatedAt: Date;
+}): Experience {
+  return {
+    _id: record.id,
+    thumbnailTitle: record.thumbnailTitle,
+    thumbnailImage: record.thumbnailImage,
+    experienceCategory: record.experienceCategory as Experience["experienceCategory"],
+    experienceType: record.experienceType as Experience["experienceType"],
+    title: record.title,
+    description: record.description,
+    competences: record.competences,
+    liensYoutube: record.liensYoutube,
+    images: record.images as ExperienceImage[],
+    createdAt: record.createdAt.toISOString(),
+    updatedAt: record.updatedAt.toISOString(),
+  };
+}
 
 export async function fetchExperiences() {
   try {
-    const res = await axios({
-      method: "post",
-      url: `${process.env.MONGO_API_URL}/action/find`,
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Request-Headers": "*",
-        "api-key": process.env.MONGO_API_KEY,
-      },
-      data: JSON.stringify({
-        dataSource: "Cluster0",
-        database: "PortfolioVitoDB",
-        collection: "Experience",
-        filter: {},
-      }),
+    const experiences = await prisma.experience.findMany({
+      orderBy: { createdAt: "desc" },
     });
-    const experiences: Experience[] = res.data.documents;
-    return experiences;
+
+    return experiences.map(toExperience);
   } catch (error) {
     console.error(error);
     return null;
@@ -29,25 +50,15 @@ export async function fetchExperiences() {
 
 export async function fetchExperience(experienceId: string) {
   try {
-    const res = await axios({
-      method: "post",
-      url: `${process.env.MONGO_API_URL}/action/findOne`,
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Request-Headers": "*",
-        "api-key": process.env.MONGO_API_KEY,
-      },
-      data: JSON.stringify({
-        dataSource: "Cluster0",
-        database: "PortfolioVitoDB",
-        collection: "Experience",
-        filter: {
-          _id: experienceId,
-        },
-      }),
+    const experience = await prisma.experience.findUnique({
+      where: { id: experienceId },
     });
-    const experience: Experience = res.data.documents;
-    return experience;
+
+    if (!experience) {
+      return null;
+    }
+
+    return toExperience(experience);
   } catch (error) {
     console.error(error);
     return null;

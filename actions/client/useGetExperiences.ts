@@ -1,4 +1,4 @@
-import { fetchExperiences, fetchExperience } from "@/actions/actions";
+import { fetchExperiences } from "@/actions/actions";
 import { useQuery } from "@tanstack/react-query";
 
 export function useGetExperiences() {
