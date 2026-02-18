@@ -33,7 +33,7 @@ const imageSchema = new mongoose.Schema(
   { _id: false }
 );
 
-const experienceSchema = new mongoose.Schema<Experience>(
+const experienceSchema = new mongoose.Schema(
   {
     _id: { type: mongoose.Schema.Types.ObjectId, auto: true },
     thumbnailTitle: { type: String, required: true },
@@ -52,32 +52,33 @@ const experienceSchema = new mongoose.Schema<Experience>(
 );
 
 export const ExperienceModel =
-  mongoose.models.Experience as mongoose.Model<Experience> ||
-  mongoose.model<Experience>("Experience", experienceSchema);
+  (mongoose.models.Experience as mongoose.Model<Experience>) ||
+  (mongoose.model("Experience", experienceSchema) as unknown as mongoose.Model<Experience>);
+
+/** Document-like shape returned by Mongoose (runtime _id is ObjectId) */
+type DocLike = { toObject(): Record<string, unknown> };
 
 /** Map Mongoose doc to app Experience type (_id and dates as strings) */
-export function toExperience(
-  doc: mongoose.Document | null
-): Experience | null {
+export function toExperience(doc: DocLike | null): Experience | null {
   if (!doc) return null;
   const obj = doc.toObject();
+  const id = obj._id as mongoose.Types.ObjectId | string;
   return {
     ...obj,
-    _id: (obj._id as mongoose.Types.ObjectId).toString(),
+    _id: typeof id === "string" ? id : id.toString(),
     createdAt: (obj.createdAt as Date).toISOString(),
     updatedAt: (obj.updatedAt as Date).toISOString(),
-  };
+  } as Experience;
 }
 
 /** Map Mongoose docs to Experience[] */
-export function toExperienceList(
-  docs: mongoose.Document[]
-): Experience[] {
+export function toExperienceList(docs: DocLike[]): Experience[] {
   return docs.map((doc) => {
     const obj = doc.toObject();
+    const id = obj._id as mongoose.Types.ObjectId | string;
     return {
       ...obj,
-      _id: (obj._id as mongoose.Types.ObjectId).toString(),
+      _id: typeof id === "string" ? id : id.toString(),
       createdAt: (obj.createdAt as Date).toISOString(),
       updatedAt: (obj.updatedAt as Date).toISOString(),
     };
