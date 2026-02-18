@@ -1,26 +1,19 @@
 "use server";
-import { Experience } from "@/types";
-import axios from "axios";
+
+import {
+  connectDB,
+  ExperienceModel,
+  toExperience,
+  toExperienceList,
+} from "@/lib/mongodb";
 
 export async function fetchExperiences() {
   try {
-    const res = await axios({
-      method: "post",
-      url: `${process.env.MONGO_API_URL}/action/find`,
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Request-Headers": "*",
-        "api-key": process.env.MONGO_API_KEY,
-      },
-      data: JSON.stringify({
-        dataSource: "Cluster0",
-        database: "PortfolioVitoDB",
-        collection: "Experience",
-        filter: {},
-      }),
-    });
-    const experiences: Experience[] = res.data.documents;
-    return experiences;
+    await connectDB();
+    const docs = await ExperienceModel.find()
+      .sort({ updatedAt: -1 })
+      .exec();
+    return toExperienceList(docs);
   } catch (error) {
     console.error(error);
     return null;
@@ -29,25 +22,9 @@ export async function fetchExperiences() {
 
 export async function fetchExperience(experienceId: string) {
   try {
-    const res = await axios({
-      method: "post",
-      url: `${process.env.MONGO_API_URL}/action/findOne`,
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Request-Headers": "*",
-        "api-key": process.env.MONGO_API_KEY,
-      },
-      data: JSON.stringify({
-        dataSource: "Cluster0",
-        database: "PortfolioVitoDB",
-        collection: "Experience",
-        filter: {
-          _id: experienceId,
-        },
-      }),
-    });
-    const experience: Experience = res.data.documents;
-    return experience;
+    await connectDB();
+    const doc = await ExperienceModel.findById(experienceId).exec();
+    return toExperience(doc);
   } catch (error) {
     console.error(error);
     return null;

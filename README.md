@@ -8,7 +8,7 @@ Portfolio website built with **Next.js App Router** to showcase audio/post-produ
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS + shadcn/ui (Radix primitives)
 - **Animations:** Framer Motion + Embla Carousel autoplay
-- **Data layer:** MongoDB Data API (via server actions) + TanStack Query hydration/cache
+- **Data layer:** MongoDB via Mongoose + TanStack Query hydration/cache
 - **Deployment target:** Vercel
 
 ## Getting started
@@ -24,11 +24,10 @@ pnpm install
 Create `.env.local`:
 
 ```bash
-MONGO_API_URL=<mongodb-data-api-base-url>
-MONGO_API_KEY=<mongodb-data-api-key>
+DATABASE_URL="mongodb+srv://<user>:<password>@<cluster>.mongodb.net/PortfolioVitoDB?retryWrites=true&w=majority"
 ```
 
-> These are used by `actions/actions.ts` to fetch experience documents.
+> Mongoose uses `DATABASE_URL` (or `MONGODB_URI`) to connect to MongoDB. The database name should match your existing DB (e.g. `PortfolioVitoDB`).
 
 ### 3) Run the development server
 
